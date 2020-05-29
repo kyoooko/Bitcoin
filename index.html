@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello,vue.js</title>
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <div id="app">
+    <h2>Bitcoin Price</h2>
+    <ul>
+      <li v-for="(rate,currency) in bpi">
+         {{currency}} : {{rate.rate_float}}
+      </li>
+    </ul>
+  
+
+
+
+   <!-- デバック用 -->
+   <!-- <pre>{{$data}}</pre> -->
+
+  <!-- コンポーネントを出力する場合 -->
+  <!-- <hello-component></hello-component> -->
+  </div>
+
+  <!-- vie.jsのCDNを先に読み込む。URLは公式ページから -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <!-- jsDelivr CDNでaxiosを導入 -->
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
