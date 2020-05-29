@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
-p{
-  color:blue;
+[v-cloak]{
+  display:none;
 }
