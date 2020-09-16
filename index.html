@@ -11,12 +11,15 @@
 <body>
   <div id="app">
     <h2>Bitcoin Price</h2>
+    <!-- hasErrorあるならv-ifを指定した要素が表示、ないならv-elseのある要素を指定。if,elseは要素の
+    v-ifなどでつける！ -->
     <section v-if="hasError">Error</section>
     <section v-else>
       <div v-if="loading">
         Loading...
       </div>
       <div v-else>
+        <!-- v-cloakはチラつき防止 -->
         <ul v-cloak>
           <li v-for="(rate,currency) in bpi">
              {{currency}} : {{rate.rate_float | currencyDecimal}}
@@ -38,7 +41,7 @@
 
   <!-- vie.jsのCDNを先に読み込む。URLは公式ページから -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-  <!-- jsDelivr CDNでaxiosを導入 -->
+  <!-- jsDelivr CDNでaxiosを導入。main.jsより先に読み込む -->
   <script src="https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js"></script>
   <script src="js/main.js"></script>
 </body>
